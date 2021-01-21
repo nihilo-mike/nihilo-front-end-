@@ -1,0 +1,28 @@
+.Header{
+    box-sizing:content-box;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    background-color: rgb(4, 13, 63);
+    text-decoration: rgb(19, 17, 17);
+    border-bottom-width: thick;
+    margin-bottom: 10px;
+
+    
+
+}
+.Dashboard{
+    font-family: "Lucida Console", "Courier New", monospace;
+    color:"#241F6E";
+    font-size: 35px;
+    
+    
+}
+.navLink{
+    color: rgb(240, 255, 250);
+    border-right: 10px;
+    font-size: 35px;
+    padding-left: 25%;
+
+    
+}

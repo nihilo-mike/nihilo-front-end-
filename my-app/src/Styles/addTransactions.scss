@@ -1,0 +1,43 @@
+.p {
+    color: #bf1650;
+    text-align: center;
+  }
+
+  .label {
+      padding-bottom:2px;
+      display: block;
+      color: white;
+    }
+  .form {
+		width:auto;
+	}
+  
+  
+
+    .input {
+    //   border: 1px solid #ccc;
+       display: block;
+       widows: 100%;
+    //   height: 40px;
+    //   padding: 0 20px;
+    //   border-radius: 20px;
+    //   font-family: "Muli-Bold";
+    //   background:white;
+    //   &:focus {
+    //     border: 1px solid #ae3c33;
+    //   }
+     }
+    .wrapper {
+      display:flex;
+      color: rgb(0, 0, 0);
+
+    }
+    .wrapper > div {
+      font-size: 3vh;
+      color: rgb(0, 0, 0);
+      background: rgb(5, 5, 5);
+      margin: 5px;
+      padding: 10px;
+      border-radius:none;
+      
+      }
