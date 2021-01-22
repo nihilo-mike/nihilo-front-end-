@@ -17,7 +17,7 @@ const AddCredit=()=>{
 const{subAccountOptions}=SubAccount();
 const{accountOptions}=Account();
 const {setCreditData}=useData();   
-    const { register, handleSubmit, reset, errors, watch,control} = useForm({
+    const { register, handleSubmit, reset, errors, watch,control,unregister} = useForm({
         mode: 'onSubmit',
         reValidateMode: 'onChange',
         
@@ -36,6 +36,7 @@ const {setCreditData}=useData();
    function onSubmit(creditData) {
         // display form data on success
            setCreditData(creditData);
+           
             }
     
     return(
@@ -118,6 +119,7 @@ const {setCreditData}=useData();
         ))}
           <button type="submit" className="btn btn-primary mr-1"> add</button>
           <button className="btn btn-secondary mr-1" type="reset">Reset</button>
+          
          </form> 
         )
 }

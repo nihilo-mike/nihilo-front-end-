@@ -4,6 +4,7 @@ import {DataProvider}from "./Contexts/DataContext"
 import { AddCredit} from "./Components/AddCredit";
 
 import { AddDebit } from "./Components/AddDebit";
+import { Results } from "./Pages/Results";
  
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
     <AddCredit/>
     <h3 style={{color:"white"}}>DebitTransactions</h3>
     <AddDebit/>
-    
+    <Results/>
    </DataProvider>
 
 

@@ -7,7 +7,7 @@ export const Results=()=>{
 return(
     <>
     <button onClick={()=>alert(JSON.stringify(creditData))}>click me </button>
-    <button onClick={()=>console.table(debitData)}>click me </button>
+    <button onClick={()=>console.log(debitData)}>click me </button>
     </>
     
 )
