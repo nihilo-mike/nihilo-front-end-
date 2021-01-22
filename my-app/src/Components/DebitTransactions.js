@@ -21,7 +21,7 @@ const DebitTransactions=()=>{
    <Table dark 
           striped>
        <thead>
-         <tr>
+         <tr >
            <th>Id</th>
            <th>amount</th>
            <th>date</th>
