@@ -18,7 +18,7 @@
         <h3>
         Transactions 
       </h3>
-    <Table light
+    <Table 
            striped
            bordered
            size="sm">

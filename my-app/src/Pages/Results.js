@@ -1,15 +1,20 @@
 import {useData} from "../Contexts/DataContext";
 
 export const Results=()=>{
-    const {creditData}=useData()||{}
-    const {debitData}=useData()||{}
+    const {creditData}=useData()||{};
+    const {debitData}=useData()||{};
     
-return(
-    <>
-    <button onClick={()=>alert(JSON.stringify(creditData))}>click me </button>
-    <button onClick={()=>console.log(debitData)}>click me </button>
-    </>
+ 
+        
     
-)
+    
+   return(
+       <button onClick={()=>console.log(JSON.stringify(creditData))}>view</button>
+   );
+    
+
+
 }
+
+
 
