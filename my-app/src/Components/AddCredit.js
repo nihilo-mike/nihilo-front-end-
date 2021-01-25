@@ -14,25 +14,27 @@ import { ErrorMessage } from '@hookform/error-message';
 
 
 const AddCredit=()=>{
+//importing optionlist constants
 const{subAccountOptions}=SubAccount();
 const{accountOptions}=Account();
 const {setCreditData}=useData();   
+    //react hook forms mthods 
     const { register, handleSubmit, reset, errors, watch,control} = useForm({
         mode: 'onSubmit',
         reValidateMode: 'onChange',
         
     });
-
+    //this will keep count of how many forms we have 
     const watchNumberofForms = watch('numberOfForms');
      
     
     
     
-    
+    //this will assign keys to the forms 
     function formNumbers() {
         return [...Array(parseInt(watchNumberofForms || 1)).keys()];
     }
-    
+    //basically setting the submit to value called credit data 
    function onSubmit(creditData) {
         // display form data on success
            setCreditData(creditData);
@@ -50,10 +52,12 @@ const {setCreditData}=useData();
         </select>
         
     </div>
+      
       {formNumbers().map(i=>(
           <div key={i} className="wrapper">
           <div>
              <label className="label">amount</label>
+          {/*using a ref to save the values */}
              <input type="number" name={`amount[${i}]`} ref={register({validate:value=>value>=1||"amount is required"})} 
               /> 
              <ErrorMessage errors={errors} name={`amount[${i}]`} as="p" />  
