@@ -16,7 +16,7 @@ function App() {
     <DataProvider>  
     <AddCredit/>
     <Results/>
-   <Transactions/>
+   
     </DataProvider> 
     
     
