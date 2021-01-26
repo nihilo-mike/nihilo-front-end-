@@ -4,7 +4,7 @@ import './Styles/nihilo.scss';
 import {AddCredit} from "./Components/AddCredit";
 import {DataProvider} from "./Contexts/DataContext";
 import { Results } from "./Pages/Results";
-import Transactions from "./Components/Transactions";
+import {AddDebit} from "./Components/AddDebit";
  
 
 function App() {
@@ -15,6 +15,8 @@ function App() {
     <Header/> 
     <DataProvider>  
     <AddCredit/>
+    <br></br>
+    <AddDebit/>
     <Results/>
    
     </DataProvider> 
