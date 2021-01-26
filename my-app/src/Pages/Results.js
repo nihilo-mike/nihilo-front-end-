@@ -23,10 +23,8 @@ export const Results=()=>{
   }
 
    const handleSubmit=()=>{
+    //checking to see if the two datas are equal before submitting the form 
     if(add(creditTotal)===add(debitTotal)){
-    
-    
-    
     for (let index = 0; index < creditData.numberOfForms; index++) {
             const element ={
                 amount: creditData.amount[index],
@@ -39,8 +37,7 @@ export const Results=()=>{
                     subId: creditData.subAccountType[index].value
                 }
             }
-       creditTransactions.push(element)
-     }
+       creditTransactions.push(element)}
      for (let index = 0; index < debitData.numberOfForms; index++) {
         const element ={
             amount:debitData.amount[index],
