@@ -3,12 +3,12 @@ import './Styles/nihilo.scss';
 
 import {AddCredit} from "./Components/AddCredit";
 import {DataProvider} from "./Contexts/DataContext";
-import { Results } from "./Pages/Results";
+import { Results} from "./Pages/Results";
 import {AddDebit} from "./Components/AddDebit";
  
 
 function App() {
-  
+
  
   return (
    <div>
@@ -18,8 +18,7 @@ function App() {
     <br></br>
     <AddDebit/>
     <Results/>
-   
-    </DataProvider> 
+   </DataProvider> 
     
     
     

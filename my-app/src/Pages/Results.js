@@ -1,18 +1,15 @@
+import { Button } from "reactstrap";
 import {useData} from "../Contexts/DataContext";
-import{useEffect}from "react";
 
 export const Results=()=>{
     const {creditData}=useData()||{};
     const {debitData}=useData()||{};
-    const{amount:creditTotal}=creditData;
-    const{amount:debitTotal}=debitData;
-
-    var creditTransactions = new Array();
-    var debitTransactions=new Array();
+    const creditTransactions = [];
+    const debitTransactions=[];
     
 
-
-  const add=(A)=>{
+//function to add 
+const add=(A)=>{
     var sum=0;  
     for (let index = 0; index < A.length; index++) {
           const element = A[index];
@@ -21,47 +18,48 @@ export const Results=()=>{
       }
       return sum;
   }
-
-   const handleSubmit=()=>{
-    //checking to see if the two datas are equal before submitting the form 
-    if(add(creditTotal)===add(debitTotal)){
-    for (let index = 0; index < creditData.numberOfForms; index++) {
-            const element ={
-                amount: creditData.amount[index],
-                remark: creditData.remark[index],
-                date: creditData.date[index],
-                accountType: {
-                    accTypeId:creditData.accountType[index].value
-                },
-                subAccountType: {
-                    subId: creditData.subAccountType[index].value
-                }
-            }
-       creditTransactions.push(element)}
-     for (let index = 0; index < debitData.numberOfForms; index++) {
+//function to extract indivisual elements from the form data 
+const setValues=(data,Array)=>{
+for (let index = 0; index < data.numberOfForms; index++) {
         const element ={
-            amount:debitData.amount[index],
-            remark:debitData.remark[index],
-            date:debitData.date[index],
+            amount: data.amount[index],
+            remark: data.remark[index],
+            date: data.date[index],
             accountType: {
-                accTypeId:debitData.accountType[index].value
+                accTypeId:data.accountType[index].value
             },
             subAccountType: {
-                subId:debitData.subAccountType[index].value
+                subId: data.subAccountType[index].value
             }
         }
-   debitTransactions.push(element)
- }
-     console.log(JSON.stringify(debitTransactions));
-     console.log(JSON.stringify(creditTransactions));
-  }else{return;}  
-    } 
-      
+   Array.push(element)}
+}
 
-return(
-       <>
-       <button onClick={handleSubmit}>view</button>
-       </>
-   );
+const handleSubmit=()=>{
+    //checking to see if the data is not equal to null 
+if(JSON.stringify(creditData) != "{}"&&JSON.stringify(debitData) != "{}"){
+        console.log(creditData);
+    //checking to see if the two datas are equal before submitting the form 
+        if(add(creditData.amount)===add(debitData.amount)){
+            setValues(creditData,creditTransactions);
+            setValues(debitData,debitTransactions);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            console.log(JSON.stringify(debitTransactions));
+            console.log(JSON.stringify(creditTransactions));
+            
+            }else{return;}  
+}else{return;}
+   
+}
+
+return(<button onClick={handleSubmit}>let goo</button>);
     
 }

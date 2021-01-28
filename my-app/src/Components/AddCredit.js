@@ -20,8 +20,8 @@ const{accountOptions}=Account();
 const {setCreditData}=useData();   
     //react hook forms mthods 
     const { register, handleSubmit, reset, errors, watch,control} = useForm({
-        mode: 'onSubmit',
-        reValidateMode: 'onChange',
+        reValidateMode: 'onChange'
+        
         
     });
     //this will keep count of how many forms we have 
@@ -36,7 +36,7 @@ const {setCreditData}=useData();
     }
     //basically setting the submit to value called credit data 
    function onSubmit(creditData) {
-        // display form data on success
+        // sets the data to creditdata 
            setCreditData(creditData);
            
             }
