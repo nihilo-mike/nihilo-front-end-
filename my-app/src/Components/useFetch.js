@@ -4,13 +4,11 @@ const[loading,setLoading]=useState(true);
 const[data,setData]=useState([]);
 
 const getData=async()=>{
- let auth =  localStorage.getItem('token');
  const response=await fetch(url, {
-     method: 'GET',
+     method: 'POST',
      headers:{
          Accept: 'application/json',
          'Content-Type': 'application/json',
-         'Authorization': "Bearer" + auth,
      },
  });
 
