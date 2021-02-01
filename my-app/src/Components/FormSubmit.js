@@ -1,13 +1,11 @@
-import { Button } from "reactstrap";
 import {useData} from "../Contexts/DataContext";
 
-export const Results=()=>{
+export const FormSubmit=()=>{
     const {creditData}=useData()||{};
     const {debitData}=useData()||{};
     const creditTransactions = [];
     const debitTransactions=[];
     
-
 //function to add 
 const add=(A)=>{
     var sum=0;  
@@ -37,7 +35,7 @@ for (let index = 0; index < data.numberOfForms; index++) {
 
 const handleSubmit=()=>{
     //checking to see if the data is not equal to null 
-if(JSON.stringify(creditData) != "{}"&&JSON.stringify(debitData) != "{}"){
+if(JSON.stringify(creditData) !== "{}"&&JSON.stringify(debitData) !== "{}"){
         console.log(creditData);
     //checking to see if the two datas are equal before submitting the form 
         if(add(creditData.amount)===add(debitData.amount)){

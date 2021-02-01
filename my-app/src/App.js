@@ -1,10 +1,5 @@
-import Header from "./Components/Header";
 import './Styles/nihilo.scss';
-import Transactions from "./Components/Transactions";
-import {AddCredit} from "./Components/AddCredit";
-import {DataProvider} from "./Contexts/DataContext";
-import { Results} from "./Pages/Results";
-import {AddDebit} from "./Components/AddDebit";
+import {Form} from "./Pages/Form"
  
 
 function App() {
@@ -12,18 +7,10 @@ function App() {
  
   return (
    <div>
-    <Header/> 
-    <DataProvider>  
-    <AddCredit/>
-    <br></br>
-    <AddDebit/>
-    <Results/>
-    <Transactions/>
-
-   </DataProvider> 
-    
-    
-    
+  
+  <Form/>
+   
+       
    </div>
  
    

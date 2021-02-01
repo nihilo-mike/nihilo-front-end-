@@ -10,9 +10,6 @@ import { ErrorMessage } from '@hookform/error-message';
 // to do correct the validation errors 
 //apply validation for all 
 
-
-
-
 const AddCredit=()=>{
 //importing optionlist constants
 const{subAccountOptions}=SubAccount();
@@ -21,15 +18,10 @@ const {setCreditData}=useData();
     //react hook forms mthods 
     const { register, handleSubmit, reset, errors, watch,control} = useForm({
         reValidateMode: 'onChange'
-        
-        
-    });
+        });
     //this will keep count of how many forms we have 
     const watchNumberofForms = watch('numberOfForms');
      
-    
-    
-    
     //this will assign keys to the forms 
     function formNumbers() {
         return [...Array(parseInt(watchNumberofForms || 1)).keys()];
@@ -37,9 +29,8 @@ const {setCreditData}=useData();
     //basically setting the submit to value called credit data 
    function onSubmit(creditData) {
         // sets the data to creditdata 
-           setCreditData(creditData);
-           
-            }
+           setCreditData(()=>creditData);
+           }
     
     return(
     <form onSubmit={handleSubmit(onSubmit)} onReset={reset}>
