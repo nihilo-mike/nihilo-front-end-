@@ -4,7 +4,15 @@ const[loading,setLoading]=useState(true);
 const[data,setData]=useState([]);
 
 const getData=async()=>{
- const response=await fetch(url);
+ let auth =  localStorage.getItem('token');
+ const response=await fetch(url, {
+     method: 'GET',
+     headers:{
+         Accept: 'application/json',
+         'Content-Type': 'application/json',
+         'Authorization': "Bearer" + auth,
+     },
+ });
 
 const data=await response.json();
  setData(data);
