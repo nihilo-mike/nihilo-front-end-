@@ -7,11 +7,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import {Account} from "./Account";
 import {SubAccount} from "./SubAccount"
 import { ErrorMessage } from '@hookform/error-message';
-// to do correct the validation errors 
-//apply validation for all 
-
-
-
 
 function AddDebit(){
 const{subAccountOptions}=SubAccount();
