@@ -17,11 +17,13 @@ const Login=()=> {
                }}).catch(err=>alert("username or password incorrect"));
     }
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" placeholder="Username" name="username" ref={register()} />
-      <input type="text" placeholder="password" name="password" ref={register()}/>
-      <button type="submit">Login</button>
+    <body className="formbody">
+    <form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <input className="userName" type="text" placeholder="Username" name="username" ref={register()} />
+      <input className="passWord" type="text" placeholder="password" name="password" ref={register()}/>
+      <button className="Submit" type="submit">Login</button>
     </form>
+    </body>
   );
 }
 

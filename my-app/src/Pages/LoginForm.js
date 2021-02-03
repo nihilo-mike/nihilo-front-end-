@@ -4,7 +4,10 @@ import {Login} from "../Components/Index"
 export const LoginForm=()=>{
 
 return(
-    <Login/>
+    <body className="LoginPage">
+    <Login/>  
+    </body>
+    
 );
 
 }

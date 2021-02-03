@@ -7,6 +7,7 @@
       padding-bottom:2px;
       display: block;
       color: white;
+      width: auto;
     }
   .form {
 		width:auto;
@@ -17,11 +18,13 @@
     .input {
        display: block;
        widows: 100%;
+       width: auto;
    
      }
     .wrapper {
       display:flex;
       color: rgb(0, 0, 0);
+      width:auto;
 
     }
     .wrapper > div {
@@ -31,5 +34,6 @@
       margin: 5px;
       padding: 10px;
       border-radius:none;
+      width: auto;
       
       }

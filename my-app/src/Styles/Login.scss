@@ -1,0 +1,29 @@
+.userName{
+    width:100%;
+    
+
+}
+.passWord[type=password]{
+    width:50%;
+
+
+}
+.Submit{
+    background-color: darkblue;
+    border: none;
+    color: aliceblue;
+
+}
+.LoginPage{
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+    
+
+    width: 100%;
+    height: 100%;
+    background:rgba(240, 1, 1, 0.938);
+}

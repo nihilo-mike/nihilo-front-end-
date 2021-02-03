@@ -31,3 +31,10 @@ class Header extends Component{
  
 export default Header
 ;
+
+
+/*{"data":[{"creditTransId":222,"amount":12,"remark":"te ","date":"2021-02-14T16:00:00Z",
+"accountType":{"accTypeId":2,"name":null},"subAccountType":{"subId":2,"name":null}},
+{"creditTransId":223,"amount":3,"remark":"st","date":"2021-02-07T16:00:00Z",
+"accountType":{"accTypeId":2,"name":null},
+"subAccountType":{"subId":2,"name":null}}]*/
