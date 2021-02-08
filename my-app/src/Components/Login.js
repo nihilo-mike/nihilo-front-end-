@@ -1,9 +1,13 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import axios from 'axios';
-import{useHistory}from 'react-router-dom'
+import {Button,Input,Container}from 'reactstrap';
+import{useHistory}from 'react-router-dom';
+import {ReactComponent as Logo} from "../Assets/nihilo.svg";
 const Login=()=> {
-  const { register, handleSubmit} = useForm();
+  const { control, handleSubmit} = useForm({
+    mode:"onSubmit"
+  });
   const onSubmit =(authData) => {
       axios({
           method:"POST",
@@ -17,13 +21,32 @@ const Login=()=> {
                }}).catch(err=>alert("username or password incorrect"));
     }
   return (
-    <body className="formbody">
-    <form className="form" onSubmit={handleSubmit(onSubmit)}>
-      <input className="userName" type="text" placeholder="Username" name="username" ref={register()} />
-      <input className="passWord" type="text" placeholder="password" name="password" ref={register()}/>
-      <button className="Submit" type="submit">Login</button>
+    <div className="formbody">
+      
+ <form  onSubmit={handleSubmit(onSubmit)}>
+ <Logo className="image"/>
+   <label>Username</label>
+   <Controller
+   as={Input}
+       bsSize="lg" 
+       type="text" 
+       placeholder="Username" 
+       name="username" 
+       control={control} 
+       />
+       <br/>
+       <label >Password</label>
+       <Controller
+       as={Input}
+       bsSize="lg" 
+       type="password" 
+       placeholder="Password" 
+       name="password" 
+       control={control}/>
+      <br/>
+     <Button type="submit" className="button" size="lg">Login</Button>
     </form>
-    </body>
+    </div>
   );
 }
 

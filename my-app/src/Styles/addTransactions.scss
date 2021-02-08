@@ -1,3 +1,5 @@
+#root{
+  background-color: black;
 .p {
     color: #bf1650;
     text-align: center;
@@ -12,19 +14,21 @@
   .form {
 		width:auto;
 	}
-  
-  
-
     .input {
        display: block;
        widows: 100%;
        width: auto;
+       
    
      }
     .wrapper {
       display:flex;
       color: rgb(0, 0, 0);
       width:auto;
+      position:static;
+      border: 5px solid rgb(255, 10, 10);
+
+      
 
     }
     .wrapper > div {
@@ -37,3 +41,5 @@
       width: auto;
       
       }
+      
+    }

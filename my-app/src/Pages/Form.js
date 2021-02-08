@@ -5,15 +5,15 @@ import {AddCredit,AddDebit,FormSubmit}from "../Components/Index";
 
 
     return(
-        <>
-    <h1>Credit accounts</h1>    
+    <div className="addForm">
+    <h1 color="white">Credit accounts</h1>    
     <AddCredit/>
-    <h3>Debit accounts</h3>
+    <h1 color="white">Debit accounts</h1>
       <AddDebit/>
        <br></br>
       <FormSubmit/>
       
-      </>
+      </div>
     
         );
     

@@ -1,29 +1,37 @@
-.userName{
-    width:100%;
+.formbody{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+background-color: black;
+
+form{
+    display:flex;
+    flex-direction: column;
+    max-width: 50%;
+    align-content: center;
+    align-self: center;
+    padding: 20px;
+    margin-top: 75px;
+    margin-bottom: 25px;
+    border: 5px solid rgb(204, 199, 199);
+    background-color: whitesmoke;
+    .image{
+   
+        width:200px;
+        height: 200px;
+        align-self: center;
+        background-color: whitesmoke;
     
+    }
+    input{
+        border: 2px solid rgb(75, 75, 77);
+          }
+        button{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border: none;
+        }
 
+}    
 }
-.passWord[type=password]{
-    width:50%;
 
-
-}
-.Submit{
-    background-color: darkblue;
-    border: none;
-    color: aliceblue;
-
-}
-.LoginPage{
-    position:fixed;
-    padding:0;
-    margin:0;
-
-    top:0;
-    left:0;
-    
-
-    width: 100%;
-    height: 100%;
-    background:rgba(240, 1, 1, 0.938);
-}
