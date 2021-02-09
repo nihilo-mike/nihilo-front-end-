@@ -15,6 +15,6 @@ const data=await response.json();
 
 useEffect(()=>{
     getData();
-    },[url]);
+    },[]);
 return{loading,data};   
 }; 

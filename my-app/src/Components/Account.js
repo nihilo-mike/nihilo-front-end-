@@ -1,13 +1,24 @@
+import {useEffect,useState}from 'react'; 
 import {useFetch} from "./useFetch"
 export const Account=()=>{
-const url1="https://nihiloacc.herokuapp.com/api/AccountType";
-const {data:accountType,loading:accLoad}=useFetch(url1);
-const accountOptions=accountType.map(a=>(
+  const[accountOptions,setAccountOptions]=useState([]);
+  const url="https://nihiloacc.herokuapp.com/api/AccountType";
+const {data:accountType,loading:accLoad}=useFetch(url);
+const GetAccount=()=>{
+  while(!accLoad){
+  setAccountOptions(accountType.map(a=>(
     {
       "value":a.accTypeId,
       "label":a.name
-    })) 
-return{accountOptions,accLoad};
+    }))||{});
+  }}; 
+
+useEffect(()=>{
+  GetAccount();
+  },[accountType]);
+return{accountOptions,accLoad};  
+
+
 
 };
 

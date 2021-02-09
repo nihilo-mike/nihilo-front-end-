@@ -14,7 +14,8 @@ const AddCredit=()=>{
 //importing optionlist constants
 const{subAccountOptions}=SubAccount();
 const{accountOptions}=Account();
-const {setCreditData}=useData();   
+const {setCreditData}=useData(); 
+console.log(JSON.stringify(subAccountOptions));  
     //react hook forms mthods 
     const { register, handleSubmit, reset, errors, watch,control} = useForm({
         reValidateMode: 'onChange'
