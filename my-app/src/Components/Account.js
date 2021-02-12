@@ -5,13 +5,13 @@ export const Account=()=>{
   const url="https://nihiloacc.herokuapp.com/api/AccountType";
 const {data:accountType,loading:accLoad}=useFetch(url);
 const GetAccount=()=>{
-  while(!accLoad){
+  
   setAccountOptions(accountType.map(a=>(
     {
       "value":a.accTypeId,
       "label":a.name
     }))||{});
-  }}; 
+  }; 
 
 useEffect(()=>{
   GetAccount();

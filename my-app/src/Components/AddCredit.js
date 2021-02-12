@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useForm,Controller } from 'react-hook-form';
 import ReactDatePicker from "react-datepicker";
 import ReactSelect from "react-select";
@@ -7,25 +7,34 @@ import {useData} from "../Contexts/DataContext";
 import {Account} from "./Account";
 import {SubAccount} from "./SubAccount"
 import { ErrorMessage } from '@hookform/error-message';
-// to do correct the validation errors 
-//apply validation for all 
 
-const AddCredit=()=>{
+ const AddCredit=()=>{
 //importing optionlist constants
 const{subAccountOptions}=SubAccount();
 const{accountOptions}=Account();
-const {setCreditData}=useData(); 
-console.log(JSON.stringify(subAccountOptions));  
+const {setCreditData}=useData();
+const [account, setAccount] = useState(null); 
+const optionlist=[];
+
     //react hook forms mthods 
-    const { register, handleSubmit, reset, errors, watch,control} = useForm({
+const { register, handleSubmit, reset, errors, watch,control} = useForm({
         reValidateMode: 'onChange'
         });
-    //this will keep count of how many forms we have 
-    const watchNumberofForms = watch('numberOfForms');
-     
-    //this will assign keys to the forms 
-    function formNumbers() {
-        return [...Array(parseInt(watchNumberofForms || 1)).keys()];
+    
+const watchNumberofForms = watch('numberOfForms');
+    
+const filter=(Array,Number)=>{
+for (let i = 0; i < Array.length; i++){
+  if(Array[i].parent === Number){
+  optionlist.push(Array[i]);}
+}return optionlist}
+
+
+
+
+//this will assign keys to the forms 
+  function formNumbers() {
+      return [...Array(parseInt(watchNumberofForms || 1)).keys()];
     }
     //basically setting the submit to value called credit data 
    function onSubmit(creditData) {
@@ -44,7 +53,6 @@ console.log(JSON.stringify(subAccountOptions));
         </select>
         
     </div>
-      
       {formNumbers().map(i=>(
           <div key={i} className="wrapper">
           <div>
@@ -85,12 +93,15 @@ console.log(JSON.stringify(subAccountOptions));
              <div>    
              <label className="label">AccountType</label>
              <Controller
-                as={ReactSelect}
-               className="input"
-              options={accountOptions}
-              name={`accountType[${i}]`}
-              isClearable
               control={control}
+              name={`accountType[${i}]`}
+              render={()=>(
+             <ReactSelect
+              className="input"
+              options={accountOptions}
+              onChange={(e)=>{setAccount(()=>e.value)}}
+              />)}
+              isClearable
               rules={{
                 required: true
               }}
@@ -100,8 +111,8 @@ console.log(JSON.stringify(subAccountOptions));
               <label className="label">sub-account</label>
               <Controller
                as={ReactSelect}
-              options={subAccountOptions}
-             name={`subAccountType[${i}]`}
+              options={filter(subAccountOptions,account)}
+              name={`subAccountType[${i}]`}
               isClearable
               control={control}
               className="input"

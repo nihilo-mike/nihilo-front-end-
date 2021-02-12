@@ -20,6 +20,12 @@ const {setDebitData}=useData();
     });
 
     const watchNumberofForms = watch('numberOfForms');
+    //a filter for the dependent dropdown
+    const filter=(Array,Number)=>{
+      for (let i = 0; i < Array.length; i++){
+        if(Array[i].parent === Number){
+        optionlist.push(Array[i]);}
+      }return optionlist}
 
     function formNumbers() {
         return [...Array(parseInt(watchNumberofForms || 1)).keys()];
@@ -82,6 +88,7 @@ const {setDebitData}=useData();
                 as={ReactSelect}
                className="input"
               options={accountOptions}
+              onChange={(e)=>{setAccount(()=>e.value)}}
               name={`accountType[${i}]`}
               isClearable
               control={control}
@@ -94,7 +101,7 @@ const {setDebitData}=useData();
               <label className="label">sub-account</label>
               <Controller
                as={ReactSelect}
-              options={subAccountOptions}
+            options={filter(subAccountOptions,account)}
              name={`subAccountType[${i}]`}
               isClearable
               control={control}

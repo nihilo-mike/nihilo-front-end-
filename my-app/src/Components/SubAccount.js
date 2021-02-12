@@ -7,16 +7,16 @@ export const SubAccount=()=>{
 const[subAccountOptions,setSubAccountOptions]=useState([]);
 const url="https://nihiloacc.herokuapp.com/api/SubAccountType"; 
 const {data:subAccountType,loading:subLoad}=useFetch(url);
-  const GetSubAccount=()=>{ 
-    while(!subLoad){
- setSubAccountOptions(subAccountType.map(s=>(
+  const GetSubAccount=()=>{
+    
+  setSubAccountOptions(subAccountType.map(s=>(
   {
     "value":s.subId,
-    "label":s.name
+    "label":s.name,
+    "parent":s.parent
   })));
-  }};
-     
-    useEffect(()=>{
+  };
+  useEffect(()=>{
       GetSubAccount();
       },[subAccountType]);
     return{subAccountOptions,subLoad};  
