@@ -51,9 +51,10 @@ const debitConstructor=(Array,result,)=>{
 
 
 const handleSubmit=()=>{
+    
     //checking to see if the data is not equal to null 
 if(JSON.stringify(creditData) !== "{}"&&JSON.stringify(debitData) !== "{}"){
-        
+     
     //checking to see if the two datas are equal before submitting the form 
         if(add(creditData.amount)===add(debitData.amount)){
             setValues(creditData,creditTransaction);

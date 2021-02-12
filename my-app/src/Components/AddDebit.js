@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useForm,Controller } from 'react-hook-form';
 import ReactDatePicker from "react-datepicker";
 import ReactSelect from "react-select";
@@ -11,11 +11,12 @@ import { ErrorMessage } from '@hookform/error-message';
 function AddDebit(){
 const{subAccountOptions}=SubAccount();
 const{accountOptions}=Account();
-const {setDebitData}=useData(); 
+const {setDebitData}=useData();
+const [account, setAccount] = useState(null); 
+const optionlist=[]; 
    
     const { register, handleSubmit, reset, errors, watch,control} = useForm({
-        mode: 'onSubmit',
-        reValidateMode: 'onChange',
+      reValidateMode: 'onChange',
         
     });
 
@@ -25,7 +26,7 @@ const {setDebitData}=useData();
       for (let i = 0; i < Array.length; i++){
         if(Array[i].parent === Number){
         optionlist.push(Array[i]);}
-      }return optionlist}
+        }return optionlist}
 
     function formNumbers() {
         return [...Array(parseInt(watchNumberofForms || 1)).keys()];
@@ -85,13 +86,15 @@ const {setDebitData}=useData();
              <div>    
              <label className="label">AccountType</label>
              <Controller
-                as={ReactSelect}
-               className="input"
+              control={control}
+              name={`accountType[${i}]`}
+              render={()=>(
+              <ReactSelect
+              className="input"
               options={accountOptions}
               onChange={(e)=>{setAccount(()=>e.value)}}
-              name={`accountType[${i}]`}
+              />)}
               isClearable
-              control={control}
               rules={{
                 required: true
               }}
@@ -108,6 +111,7 @@ const {setDebitData}=useData();
               className="input"
               rules={{
                 required: true
+                
               }}
               />
            </div>

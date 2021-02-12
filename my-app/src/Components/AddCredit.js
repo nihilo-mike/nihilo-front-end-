@@ -39,8 +39,11 @@ for (let i = 0; i < Array.length; i++){
     //basically setting the submit to value called credit data 
    function onSubmit(creditData) {
         // sets the data to creditdata 
-           setCreditData(()=>creditData);
+           setCreditData(creditData);
+           console.log(creditData)
+           
            }
+           
     
     return(
     <form onSubmit={handleSubmit(onSubmit)} onReset={reset}>
