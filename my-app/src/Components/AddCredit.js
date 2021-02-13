@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { useForm,Controller } from 'react-hook-form';
 import ReactDatePicker from "react-datepicker";
-import ReactSelect from "react-select";
+import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
 import {useData} from "../Contexts/DataContext";
 import {Account} from "./Account";
@@ -98,12 +98,11 @@ for (let i = 0; i < Array.length; i++){
              <Controller
               control={control}
               name={`accountType[${i}]`}
-              render={()=>(
-             <ReactSelect
-              className="input"
-              options={accountOptions}
-              onChange={(e)=>{setAccount(()=>e.value)}}
-              />)}
+              render={(props)=>(
+                <Select
+                  options={accountOptions}
+                  onChange={e => {props.onChange(e);setAccount(()=>e.value)}}
+                  />)}               
               isClearable
               rules={{
                 required: true
@@ -113,14 +112,14 @@ for (let i = 0; i < Array.length; i++){
            <div>
               <label className="label">sub-account</label>
               <Controller
-               as={ReactSelect}
+               as={Select}
               options={filter(subAccountOptions,account)}
               name={`subAccountType[${i}]`}
               isClearable
               control={control}
               className="input"
               rules={{
-                required: true
+              required: true
               }}
               />
            </div>
