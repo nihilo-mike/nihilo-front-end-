@@ -40,9 +40,8 @@ for (let i = 0; i < Array.length; i++){
    function onSubmit(creditData) {
         // sets the data to creditdata 
            setCreditData(creditData);
-           console.log(creditData)
-           
-           }
+          
+            }
            
     
     return(

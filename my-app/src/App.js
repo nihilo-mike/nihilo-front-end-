@@ -3,8 +3,8 @@ import{Route,BrowserRouter as Router,Switch} from 'react-router-dom';
 import {Form} from "./Pages/Form"
 import{LoginForm} from "./Pages/LoginForm";
 import{DashBoard}from"./Pages/DashBoard";
-
-
+import{BalanceSheet}from "./Components/Index";
+import{Income}from"./Pages/Income";
 function App() {
 
  return (
@@ -13,7 +13,10 @@ function App() {
      <Route path='/' exact={true} component={LoginForm}/>
      <Route path='/Add' exact={true} component={Form}/> 
      <Route path='/Dashboard' exact={true}component={DashBoard}/>
+     <Route path='/Balance'  exact={true}component={BalanceSheet}/>
+     <Route path='/Income'exact={true}component={Income}/>
 
+    
      
   </Switch> 
  </Router>
