@@ -10,7 +10,8 @@ export const IncomeTable=()=>{
    return(<div className="incomeTable">
              <Table 
              size="sm"
-             bordered>
+             bordered
+             striped="true">
              <thead>
                 <tr>
                 <th>Income Statement</th>

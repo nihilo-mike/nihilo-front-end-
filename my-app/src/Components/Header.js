@@ -1,5 +1,7 @@
 import React from 'react';
 import{Nav,NavItem,NavLink} from 'reactstrap';
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -10,7 +12,7 @@ export const Header=()=>{
             <div className="Header">
                 <Nav tabs>
                     <NavItem>
-                    <NavLink href="#" className="NavBar">Dashboard</NavLink>
+                    <Link to="/Income">Income</Link>
                     </NavItem>
                     <NavItem>
                         <NavLink href="#" className="navLink">Transactions</NavLink>

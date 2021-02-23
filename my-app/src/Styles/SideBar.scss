@@ -1,0 +1,26 @@
+.sideBarCont{
+    display: flex;
+    flex-direction: column;
+    border:5px solid red;
+    position: absolute;
+    min-height: 100vmin;
+.logo{
+    width: 200px;
+    height: 200px;
+
+
+}  
+
+.optionContainer{
+    border:5px solid green;
+    padding-top: 50px; 
+   }     
+.options{
+// border:5px solid blue;
+ padding-top:20px;
+} 
+
+
+
+
+}
