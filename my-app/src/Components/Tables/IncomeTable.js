@@ -7,7 +7,7 @@ export const IncomeTable=()=>{
       
     const {incomeStatement}=useData();
    if( JSON.stringify(incomeStatement)!=="{}"){
-   return(<div className="incomeTable">
+   return(<div className="incometable">
              <Table 
              size="sm"
              bordered

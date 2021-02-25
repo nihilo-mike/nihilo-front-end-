@@ -1,26 +1,34 @@
-.sideBarCont{
-    display: flex;
-    flex-direction: column;
-    border:5px solid red;
-    position: absolute;
-    min-height: 100vmin;
+
+.sidebar {
+        position: absolute;
+        //width: 33.3333%;
+        width: 11em;
+        height: 100%;
+        top: 0;
+        overflow:hidden;
+        background-color: #245a8a;
+       
+    }
+    
+    
 .logo{
     width: 200px;
-    height: 200px;
+    height: 100px;
 
 
 }  
 
 .optionContainer{
     border:5px solid green;
-    padding-top: 50px; 
+    justify-self: baseline;
+    
+    
    }     
 .options{
 // border:5px solid blue;
- padding-top:20px;
+ 
 } 
 
 
 
 
-}

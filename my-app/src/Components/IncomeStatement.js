@@ -32,16 +32,14 @@ const onSubmit=(date)=>{
   }
 }
 return(
-   <div className="IncomeForm">
-   <form  onSubmit={handleSubmit(onSubmit)}>
-    <div>  
-     <label className="label">date</label>
+   <form  className="income-form" onSubmit={handleSubmit(onSubmit)}> 
+ 
                 <Controller
                  control={control}
                  name={"startDate"}
              render={(props) => (
              <ReactDatePicker
-              className="input"
+              className="incomeinput"
               placeholderText="from Date"
               onChange={(e) => props.onChange(e)}
               selected={props.value}/>
@@ -50,15 +48,12 @@ return(
                 required:true
                 }}
                 />
-            </div>
-             <div>  
-             <label className="label">uptodate</label>
-                        <Controller
+                <Controller
                          control={control}
                          name={"endDate"}
                      render={(props) => (
                      <ReactDatePicker
-                      className="input"
+                      className="incomeinput"
                       placeholderText="up to date"
                       onChange={(e) => props.onChange(e)}
                       selected={props.value}/>
@@ -67,10 +62,11 @@ return(
                         required:true
                         }}
                         />
-                    </div>
+            <div className="button-div">            
            <Button className="button" type="submit">go</Button>
+           </div>
    </form>
-   </div>
+   
 );
 
 }

@@ -8,7 +8,7 @@ export const SideBar=()=>{
 
 return(
 
-<div className="sideBarCont">
+<div className="sidebar">
 
   <Logo className="logo"/>
    
