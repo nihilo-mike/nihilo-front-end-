@@ -7,6 +7,15 @@ import "react-datepicker/dist/react-datepicker.css";
 import {Account} from "./Account";
 import {SubAccount} from "./SubAccount"
 import { ErrorMessage } from '@hookform/error-message';
+import { Button,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Row,
+  CardFooter,} from 'reactstrap';
+
 
 function AddDebit(){
 const{subAccountOptions}=SubAccount();
@@ -36,90 +45,124 @@ const optionlist=[];
     setDebitData(debitData);
       }
     
-    return(
-    <form onSubmit={handleSubmit(onSubmit)} onReset={reset}>
-        <div>
-        <label className="label">number of inputs</label>
-        <select name="numberOfForms" ref={register} className="input">
-            {[1,2,3,4].map(i => 
-                <option key={i} value={i}>{i}</option>
-            )}
-        </select>
-        
-    </div>
-      {formNumbers().map(i=>(
-          <div key={i} className="wrapper">
-          <div>
-             <label className="label">amount</label>
-             <input type="number" name={`amount[${i}]`} ref={register({validate:value=>value>=1||"amount is required"})} 
-              /> 
-             <ErrorMessage errors={errors} name={`amount[${i}]`} as="p" />  
-            <ErrorMessage
-              errors={errors}
-              name={`amount[${i}]`}
-              render={({ message }) => <p style={{color:"red"}}>{message}</p>}
-         />
+    return( <Form onSubmit={handleSubmit(onSubmit)} onReset={reset}>
+    <Col md={12} xs={12} sm={12} align="right">
+      <Label>Number of Inputs</Label>
+      <select name="numberOfForms" ref={register} className="input">
+        {[1, 2, 3, 4].map((i) => (
+          <option key={i} value={i}>
+            {i}
+          </option>
+        ))}
+      </select>
+    </Col>
+    {formNumbers().map((i) => (
+      <div key={i} className="wrapper">
+        <Row>
+          <Col md={3} sm={12} xs={12}>
+            <FormGroup>
+              <Label>Amount</Label>
+              <Controller
+              as={Input}
+                type="number"
+                control={control}
+                name={`amount[${i}]`}
+                rules={{
+                  required: true
+                }}
+                />
+              <ErrorMessage errors={errors} name={`amount[${i}]`} as="p" />
+              <ErrorMessage
+                errors={errors}
+                name={`amount[${i}]`}
+                render={({ message }) => (
+                  <p style={{ color: "red" }}>{message}</p>
+                )}
+              />
+            </FormGroup>
+          </Col>
 
-           </div>
-           <div>   
-              <label className="label">remark</label>
-              <input name={`remark[${i}]`} className="input" ref={register} />
-           </div>
-            <div>  
-             <label className="label">date</label>
+          <Col md={3} sm={12} xs={12}>
+            <FormGroup>
+              <Label>Date</Label>
+              <Col>
                 <Controller
-                 control={control}
-                 name={`date[${i}]`}
-             render={(props) => (
-             <ReactDatePicker
-              className="input"
-              placeholderText="select date"
-              onChange={(e) => props.onChange(e)}
-              selected={props.value}/>
-              )}
-              rules={{
-                required:true
-                
-              }}
-            />
-            </div>
-             <div>    
-             <label className="label">AccountType</label>
-             <Controller
+                  control={control}
+                  name={`date[${i}]`}
+                  render={(props) => (
+                    <ReactDatePicker
+                      placeholderText="select date"
+                      onChange={(e) => props.onChange(e)}
+                      selected={props.value}
+                    />
+                  )}
+                  rules={{
+                    required: true,
+                  }}
+                />
+              </Col>
+            </FormGroup>
+          </Col>
+
+          <Col md={3} sm={12} xs={12}>
+            <Label>AccountType</Label>
+            <Controller
               control={control}
               name={`accountType[${i}]`}
-              render={(props)=>(
+              render={(props) => (
                 <Select
                   options={accountOptions}
-                  onChange={e => {props.onChange(e);setAccount(()=>e.value)}}
-                  />)}               
+                  onChange={(e) => {
+                    props.onChange(e);
+                    setAccount(() => e.value);
+                  }}
+                />
+              )}
               isClearable
               rules={{
-                required: true
+                required: true,
               }}
-              />
-           </div>
-           <div>
-              <label className="label">sub-account</label>
-              <Controller
-               as={Select}
-            options={filter(subAccountOptions,account)}
-             name={`subAccountType[${i}]`}
+            />
+          </Col>
+          <Col md={3} sm={12} xs={12}>
+            <Label>sub-account</Label>
+            <Controller
+              as={Select}
+              options={filter(subAccountOptions, account)}
+              name={`subAccountType[${i}]`}
               isClearable
               control={control}
               className="input"
               rules={{
-                required: true
-                
+                required: true,
               }}
-              />
-           </div>
-           
-        </div> 
-        ))}
-          <button type="submit" className="btn btn-primary mr-1"> add</button>
-          <button className="btn btn-secondary mr-1" type="reset">Reset</button>
-         </form> 
+            />
+          </Col>
+          <Col md={12} sm={12} xs={12}>
+            <Label>Remarks</Label>
+            <Controller
+            as={Input}
+              type="textarea"
+              name={`remark[${i}]`}
+              className="input"
+              control={control}
+            />
+          </Col>
+        </Row>
+        <hr className="bg-success" />
+      </div>
+    ))}
+    <CardFooter align="center">
+      <Button type="submit" className="bg-success m-1 border-0">
+        {" "}
+        Add
+      </Button>
+      <Button className="bg-danger border-0 m-1" type="reset">
+        Reset
+      </Button>
+    </CardFooter>
+  </Form>
+   
         )
 }
 

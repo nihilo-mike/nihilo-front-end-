@@ -1,21 +1,29 @@
 import React from 'react';
-import {AddCredit,AddDebit,FormSubmit}from "../Components/Index";
+import { Card, CardBody, CardFooter, CardHeader } from "reactstrap";
+import { AddCredit, AddDebit, FormSubmit, Header } from "../Components/Index";
+
 
  export  const Form=()=>{
 
 
     return(
-    <div className="addForm">
-    <h1 color="white">Credit accounts</h1>    
-    <AddCredit/>
-    <h1 color="white">Debit accounts</h1>
-      <AddDebit/>
-       <br></br>
-      <FormSubmit/>
-      
-      </div>
-    
-        );
+      <>
+      <Header />
+      <Card className="addForm">
+        <CardHeader>Credit accounts</CardHeader>
+        <CardBody>
+          <AddCredit />
+        </CardBody>
+        <CardHeader>Debit accounts</CardHeader>
+        <CardBody>
+          <AddDebit />
+        </CardBody>
+        <CardFooter align="center">
+          <FormSubmit />
+        </CardFooter>
+      </Card>
+    </>
+  );
     
     
     

@@ -1,0 +1,22 @@
+.balance-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 0.5fr;
+    grid-template-rows: 0.4fr 1.6fr 1fr;
+    min-height: 100vh;
+    gap: 10px 12px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.86));
+    grid-template-areas:
+      "sidebarCont . balance-form ."
+      "sidebarCont balance-table balance-table balance-table"
+      "sidebarCont balance-table balance-table balance-table";
+  }
+  
+  .balance-form { grid-area: balance-form; }
+  
+  .balance-table { 
+      grid-area: balance-table; 
+      background-color: whitesmoke;
+    padding-right: 100px; }
+  
+  .sidebarCont { grid-area: sidebarCont; }
+  

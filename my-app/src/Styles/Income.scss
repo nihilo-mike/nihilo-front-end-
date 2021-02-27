@@ -7,12 +7,12 @@
   min-height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.86));
   grid-template-areas:
-    "sidebar income-form income-form ."
-    "sidebar incometable incometable ."
-    "sidebar incometable incometable .";
+    "sidebarCont income-form income-form ."
+    "sidebarCont incometable incometable ."
+    "sidebarCont incometable incometable .";
 }
 
-.sidebar { grid-area: sidebar; }
+.sidebarCont { grid-area: sidebarCont; }
 
 .income-form { grid-area: income-form; }
 
@@ -37,7 +37,7 @@
    
    }
 .income-form{
- border: 3px dotted red;
+ 
   display:flex;   
  justify-self: stretch;
    place-items: center;

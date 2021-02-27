@@ -1,28 +1,14 @@
-.Header{
-    box-sizing:content-box;
-    width: 100%;
+.Header {
+    box-sizing: content-box;
     display: flex;
+    background: rgb(209, 209, 209);
     justify-content: left;
-    background-color: rgb(4, 13, 63);
-    text-decoration: rgb(19, 17, 17);
-    border-bottom-width: thick;
     margin-bottom: 10px;
-
-    
-
-}
-.Dashboard{
+    border-bottom: 1.5px solid rgb(163, 163, 163);
+  }
+  .Dashboard {
     font-family: "Lucida Console", "Courier New", monospace;
-    color:"#241F6E";
+    color: "#241F6E";
     font-size: 35px;
-    
-    
-}
-.navLink{
-    color: rgb(240, 255, 250);
-    border-right: 10px;
-    font-size: 35px;
-    padding-left: 25%;
-
-    
-}
+  }
+  

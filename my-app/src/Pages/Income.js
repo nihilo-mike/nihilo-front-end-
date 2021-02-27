@@ -5,7 +5,6 @@ export const Income=()=>{
 
 return(
     <div className="grid-container">
-    
      <SideBar/>    
     <IncomeStatement/>
     <IncomeTable/>

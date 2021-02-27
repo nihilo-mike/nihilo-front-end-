@@ -7,4 +7,5 @@ export { Header} from"./Header";
 export {BalanceSheet} from "./BalanceSheet";
 export {IncomeStatement}from "./IncomeStatement";
 export {IncomeTable} from "./Tables/IncomeTable";
+export {BalanceTable} from "./Tables/BalanceTable";
 export{SideBar}from "./SideBar";

@@ -7,37 +7,46 @@ import { Button } from 'reactstrap';
 import axios from 'axios';
 export const BalanceSheet=()=>{
 
-const{setBalanceSheet}=useData;    
+const{setBalanceSheet}=useData();    
 const {handleSubmit,control} = useForm({
         reValidateMode: 'onChange',
           
       });   
 
-const onSubmit=(date)=>{
-    
-    const event = new Date(date.startDate);
-    const eventTwo = new Date(date.endDate);      
-    const startDate=event.toISOString();
-    const endDate=eventTwo.toISOString();
-   if(typeof startDate!=='undefined'){
- axios.get(`https://nihiloacc.herokuapp.com/api/BalanceSheet/${startDate}/${endDate}`,
-    {'headers':{'Authorization':localStorage.getItem('token')}}).then(response=>{
-          if(response.status==200){
-        setBalanceSheet(response.data);  
-        }
-    })
-  }
+const onSubmit=(data)=>{
+    const event = new Date(data.date);
+    let eventTwo=new Date(data.date);
+        eventTwo.setMonth(eventTwo.getMonth()-12);
+    let eventThree=new Date(data.date);
+        eventThree.setMonth(eventThree.getMonth()-24);    
+    const firstDate=event.toISOString();
+    const secondDate=eventTwo.toISOString();
+    const thirdDate=eventThree.toISOString();
+   if(typeof thirdDate!=='undefined'){
+     axios.all([
+       axios.get(`https://nihiloacc.herokuapp.com/api/BalanceSheet/${secondDate}/${firstDate}`,
+     {'headers':{'Authorization':localStorage.getItem('token')}}),
+     axios.get(`https://nihiloacc.herokuapp.com/api/BalanceSheet/${thirdDate}/${secondDate}`,
+     {'headers':{'Authorization':localStorage.getItem('token')}})
+    ])
+ .then(
+   axios.spread((first,second)=>{
+     const yearOne=first.data;
+     const yearTwo=second.data;
+     setBalanceSheet([yearTwo,yearOne]);
+    }
+    ))
+    }
 }
 return(
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="balance-form" onSubmit={handleSubmit(onSubmit)}>
     <div>  
      <label className="label">date</label>
                 <Controller
                  control={control}
-                 name={"startDate"}
+                 name={"date"}
              render={(props) => (
              <ReactDatePicker
-              className="input"
               placeholderText="select date"
               onChange={(e) => props.onChange(e)}
               selected={props.value}/>
@@ -47,24 +56,9 @@ return(
                 }}
                 />
             </div>
-             <div>  
-             <label className="label">uptodate</label>
-                        <Controller
-                         control={control}
-                         name={"endDate"}
-                     render={(props) => (
-                     <ReactDatePicker
-                      className="input"
-                      placeholderText="select date"
-                      onChange={(e) => props.onChange(e)}
-                      selected={props.value}/>
-                      )}
-                      rules={{
-                        required:true
-                        }}
-                        />
-                    </div>
-           <Button type="submit">go</Button>
+            <div className="balancebutton">
+          <Button className="button" type="submit">go</Button>
+          </div>
    </form>
 
 

@@ -1,47 +1,24 @@
 .p {
-    color: #bf1650;
-    text-align: center;
-  }
+  color: #6f6669;
+  text-align: center;
+}
 
-  .label {
-      padding-bottom:2px;
-      display: block;
-      color: white;
-      width: auto;
-    }
-  .form {
-		width:auto;
-	}
-    .input {
-       display: block;
-       widows: 100%;
-       width: auto;
-       
-   
-     }
-    .wrapper {
-      display:flex;
-      color: rgb(0, 0, 0);
-      width:auto;
-      position:static;
-      border: 5px solid rgb(255, 10, 10);
+.label {
+  padding-bottom: 2px;
+  display: block;
+  width: auto;
+}
+.form {
+  width: auto;
+}
 
-      
+.wrapper > div {
+  margin: 5px;
+  padding: 10px;
+}
 
-    }
-    .wrapper > div {
-      font-size: 3vh;
-      color: rgb(0, 0, 0);
-      background: rgb(5, 5, 5);
-      margin: 5px;
-      padding: 10px;
-      border-radius:none;
-      width: auto;
-      
-      }
-      
-    .addForm{
-      border: 5px solid rgb(51, 255, 10);
-
-
-    }
+.addForm {
+  margin-top: 70px;
+  padding: 30px;
+  background:whitesmoke;
+}
