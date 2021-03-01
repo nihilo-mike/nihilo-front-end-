@@ -11,7 +11,8 @@
       "sidebarCont balance-table balance-table balance-table";
   }
   
-  .balance-form { grid-area: balance-form; }
+  .balance-form { grid-area: balance-form;
+  padding-top: 65px; }
   
   .balance-table { 
       grid-area: balance-table; 

@@ -119,5 +119,5 @@ export const BalanceTable=()=>{
                     <tr><td>  </td></tr> 
                   </Table>
                   </div>);
-          }
+                  }
                return(null);}
