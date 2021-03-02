@@ -14,10 +14,7 @@ function App() {
      <Route path='/Add' exact={true} component={Form}/> 
      <Route path='/Dashboard' exact={true}component={DashBoard}/>
      <Route path='/Balance'  exact={true}component={Balance}/>
-     <Route path='/Income'exact={true}component={Income}/>
-
-    
-     
+     <Route path='/Income'exact={true}component={Income}/>  
   </Switch> 
  </Router>
    
