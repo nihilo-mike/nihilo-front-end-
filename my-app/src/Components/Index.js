@@ -9,3 +9,4 @@ export {IncomeStatement}from "./IncomeStatement";
 export {IncomeTable} from "./Tables/IncomeTable";
 export {BalanceTable} from "./Tables/BalanceTable";
 export{SideBar}from "./SideBar";
+export{default as ChartOne}from "../Components/Charts/ChartOne";

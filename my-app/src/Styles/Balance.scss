@@ -4,7 +4,10 @@
     grid-template-rows: 0.4fr 1.6fr 1fr;
     min-height: 100vh;
     gap: 10px 12px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.86));
+    background: linear-gradient(90deg, 
+  rgba(255,255,255,1) 0%, 
+  rgba(212,212,212,0.7685117302052786) 44%, 
+  rgba(147,149,149,1) 100%);
     grid-template-areas:
       "sidebarCont . balance-form ."
       "sidebarCont balance-table balance-table balance-table"
