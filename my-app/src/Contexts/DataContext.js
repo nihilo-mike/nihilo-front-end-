@@ -10,10 +10,16 @@ export const DataProvider=({children})=>{
     const[debitData,setDebitData]=useState({});
     const[balanceSheet,setBalanceSheet]=useState({});
     const[incomeStatement,setIncomeStatement]=useState({});
+    const[analysis,setAnalysis]=useState({});
    
     
     return(
-        <DataContext.Provider value={{incomeStatement,setIncomeStatement,creditData,setCreditData,debitData,setDebitData,balanceSheet,setBalanceSheet}}>
+        <DataContext.Provider value={{
+        incomeStatement,setIncomeStatement,
+        creditData,setCreditData,
+        debitData,setDebitData,
+        balanceSheet,setBalanceSheet,
+        analysis,setAnalysis}}>
             {children}
         </DataContext.Provider>
     );

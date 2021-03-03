@@ -53,7 +53,7 @@ export const SideBar = () => {
             style={{
               textDecoration: "none",
             }}
-            to="/Balance"
+            to="/Analysis"
           >
             <NavLink activeClassName="activeside">Analysis</NavLink>
           </Link>

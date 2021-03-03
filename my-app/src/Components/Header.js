@@ -79,7 +79,7 @@ export const Header = () => {
         <NavItem>
           <NavLink className="nav-link">
             <Link
-              to="/Income"
+              to="/Analysis"
               style={{
                 textDecoration: "none",
               }}

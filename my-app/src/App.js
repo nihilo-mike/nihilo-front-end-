@@ -5,6 +5,7 @@ import{LoginForm} from "./Pages/LoginForm";
 import{DashBoard}from"./Pages/DashBoard";
 import{Balance}from "./Pages/Balance";
 import{Income}from"./Pages/Income";
+import {AnalysisPage}from "./Pages/AnalysisPage";
 function App() {
 
  return (
@@ -14,7 +15,8 @@ function App() {
      <Route path='/Add' exact={true} component={Form}/> 
      <Route path='/Dashboard' exact={true}component={DashBoard}/>
      <Route path='/Balance'  exact={true}component={Balance}/>
-     <Route path='/Income'exact={true}component={Income}/>  
+     <Route path='/Income'exact={true}component={Income}/>
+     <Route path='/Analysis'exact={true}component={AnalysisPage}/>  
   </Switch> 
  </Router>
    
