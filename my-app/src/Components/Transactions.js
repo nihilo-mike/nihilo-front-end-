@@ -37,6 +37,8 @@ import Pagination from "react-js-pagination";
           </div>
     
           <Pagination
+           itemClass="page-item" 
+           linkClass="page-link"
             activePage={currentPage}
             itemsCountPerPage={recordPerPage}
             totalItemsCount={totalRecords}
