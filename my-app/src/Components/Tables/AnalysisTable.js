@@ -19,6 +19,7 @@ export const AnalysisTable=()=>{
               <div className="balance-table">
               <Table
               striped
+              responsive
               >
                   <tr>
                    <th>Label</th>

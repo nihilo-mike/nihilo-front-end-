@@ -8,6 +8,7 @@ export {BalanceSheet} from "./BalanceSheet";
 export {Analysis} from "./Analysis";
 export {IncomeStatement}from "./IncomeStatement";
 export {IncomeTable} from "./Tables/IncomeTable";
+export {TransactionTable} from "./Tables/TransactionTable";
 export {BalanceTable} from "./Tables/BalanceTable";
 export {AnalysisTable} from "./Tables/AnalysisTable";
 export{SideBar}from "./SideBar";
