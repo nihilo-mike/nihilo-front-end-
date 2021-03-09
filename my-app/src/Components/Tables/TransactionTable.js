@@ -7,9 +7,12 @@ export const TransactionTable=()=>{
 
 const{transactions}=useData();
 
+function isEmpty(value){
+    return(value==null||value.length===0);
+}
 
-if( JSON.stringify(transactions)!=="{}"){
-    console.log(transactions);
+if(!isEmpty(transactions)){
+    console.log(JSON.stringify(transactions));
 return(
 <Table 
 striped
@@ -23,7 +26,8 @@ size="sm">
 </thead>
 <tbody>
 {/* mapping the data we fetched so that in can be displayed in a table   */}
-{transactions.map((lines,transId) => (
+
+{transactions.flat().map((lines,transId) => (
  <tr key={transId}>
  <th scope="row">{lines.transId}</th>
    {lines.creditTransactions.map(c =>{ 
