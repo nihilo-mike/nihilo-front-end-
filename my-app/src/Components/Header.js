@@ -70,7 +70,7 @@ export const Header = () => {
                 textDecoration: "none",
               }}
             >
-              <NavLink>Transactions</NavLink>
+              <NavLink>Analysis</NavLink>
             </Link>
           </NavLink>
         </NavItem>
@@ -84,7 +84,7 @@ export const Header = () => {
                 textDecoration: "none",
               }}
             >
-              <NavLink>Analysis</NavLink>
+              <NavLink>Transactions</NavLink>
             </Link>
           </NavLink>
         </NavItem>

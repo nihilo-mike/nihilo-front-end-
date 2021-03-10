@@ -1,0 +1,17 @@
+.trans-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 0.1fr 0.5fr;
+    grid-template-rows: 1fr 1.3fr 0.7fr;
+    gap: 7px 5px;
+    grid-template-areas:
+      "cont trans-table trans-table ."
+      "cont trans-table trans-table ."
+      "cont  paginator . .";
+  }
+  
+  .cont { grid-area: cont; }
+  
+  .trans-table { grid-area: trans-table; }
+  
+  .paginator { grid-area: paginator; }
+  
