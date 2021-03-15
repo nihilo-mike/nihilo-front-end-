@@ -12,4 +12,5 @@ export {TransactionTable} from "./Tables/TransactionTable";
 export {BalanceTable} from "./Tables/BalanceTable";
 export {AnalysisTable} from "./Tables/AnalysisTable";
 export{SideBar}from "./SideBar";
-export{default as ChartOne}from "../Components/Charts/ChartOne";
+export{ChartOne}from "../Components/Charts/ChartOne";
+export{ChartTwo}from "../Components/Charts/ChartTwo";

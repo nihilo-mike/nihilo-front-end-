@@ -17,7 +17,7 @@ if(!isEmpty(transactions)){
    <div className="trans-table">   
   <Table
    style={{background:"white"}}
-   size="sm">
+   >
   <thead>
   <tr>
   <th style={{color:"white",backgroundColor:"#009600"}}>Id</th>
@@ -45,7 +45,7 @@ if(!isEmpty(transactions)){
 {lines.creditTransactions.map(c =>( 
    <>
    <tr>  
-   <td headers="amnt">{c.amount}</td>
+   <td>{c.amount}</td>
    <td><Moment date={c.date}format="YYYY/MM/DD"/></td>
    <td>{c.remark}</td>
    <td>{c.accountType.name}</td>
@@ -77,5 +77,8 @@ if(!isEmpty(transactions)){
 </div>
 ); 
 }
-else return null;
+else return (<div className="trans-table">
+              <h1>End of Data</h1>
+              <h6>use the page numbers to go back</h6>
+           </div>);
 }

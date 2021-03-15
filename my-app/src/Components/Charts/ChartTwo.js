@@ -1,11 +1,11 @@
 import React  from 'react';
-import {   Bar  } from 'react-chartjs-2';
-import { ProfitMargin } from '../ProfitMargin';
+import {   Line } from 'react-chartjs-2';
+import { Roa } from '../Roa';
 
 
-export const ChartOne=()=>{
+export const ChartTwo=()=>{
  
-const{profitMargin}=ProfitMargin();
+const{roa}=Roa();
 const arr=[];
 
 
@@ -43,15 +43,17 @@ const percentConv=(Array,Output)=>{
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data:percentConv(profitMargin,arr),
+        data:percentConv(roa,arr),
       }
     ]
   };
   
   return (
       <div>
-        <h4>Profit Margin in % </h4>
-        <Bar data={data} />
+        <h4>Return on investment in % </h4>
+        <Line data={data} />
         </div>
     );
   }
+
+  

@@ -20,6 +20,8 @@
   .balance-table { 
       grid-area: balance-table; 
       background-color: whitesmoke;
+      border-width:2px;  
+    border-style:groove;
     padding-right: 100px; }
   
   .sidebarCont { grid-area: sidebarCont; }

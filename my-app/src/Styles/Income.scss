@@ -19,7 +19,9 @@
 
 .income-form { grid-area: income-form; }
 
-.incometable { grid-area: incometable; }
+.incometable { grid-area: incometable;
+  border-width:5px;  
+  border-style:groove; }
 
 
 
