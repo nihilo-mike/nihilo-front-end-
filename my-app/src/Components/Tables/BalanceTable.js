@@ -8,7 +8,7 @@ export const BalanceTable=()=>{
      if (JSON.stringify(balanceSheet)!=="{}") {
         const[previous,current]=balanceSheet;
           return(
-              <div className="balance-table">
+              <div className="balancetable">
               <Table
               striped
               responsive

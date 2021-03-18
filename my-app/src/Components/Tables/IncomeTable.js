@@ -11,8 +11,7 @@ export const IncomeTable=()=>{
              <Table 
              size="sm"
              borderless
-             striped="true"
-             responsive>
+             striped="true">
              <thead>
                 <tr>
                 <th>Income Statement</th>

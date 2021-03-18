@@ -1,38 +1,49 @@
 import Moment from 'react-moment';
 import {useData} from "../../Contexts/DataContext";
+import { ContextMenuTrigger } from 'react-contextmenu';
+import {Menu} from "../Menu";
 import {Table} from 'reactstrap';
 
-export const TransactionTable=()=>{
 
+
+export const TransactionTable=()=>{
+ 
+const ID='ID';
 
 const{transactions}=useData();
 
+
 function isEmpty(value){
- return(value==null||value.length===0);
- }
+   return(value==null||value.length===0);
+   }    
 
 if(!isEmpty(transactions)){
    
   return(
-   <div className="trans-table">   
+     
+   <div className="trans-table">
+         
   <Table
    style={{background:"white"}}
+   hover
+   borderless
    >
   <thead>
   <tr>
-  <th style={{color:"white",backgroundColor:"#009600"}}>Id</th>
-  <th style={{color:"white",backgroundColor:"#009600"}}>Transactions</th>
+  <th style={{color:"white",backgroundColor:"#009600"}}align="center">Transactions</th>
+    
   </tr>
   </thead>
  <tbody>
-
-
 {/* mapping the data we fetched so that in can be displayed in a table   */}
 
 {transactions.flat().map((lines,transId) => (
- <tr key={transId}>
- <th scope="row">{lines.transId}</th>
- <thead>
+  <tr key={transId}>
+ <ContextMenuTrigger id={ID}>
+ <th scope="row" align="right"style={{color:"black",backgroundColor:"lightgrey"}}>Transaction id----------------------------{lines.transId}-------------------------------------</th> 
+  <Menu id={ID}/>
+  </ContextMenuTrigger>
+  <thead>
     <tr>
    <th style={{color:"white",backgroundColor:"#009600"}}>amount</th>
    <th style={{color:"white",backgroundColor:"#009600"}}>date</th>
@@ -66,12 +77,10 @@ if(!isEmpty(transactions)){
    <td>Debit</td>
    </tr>
    </>
-   );
+   );})}
+   </tr>
    
-   })}
-
-</tr>
-))}
+   ))}
 </tbody>
 </Table>
 </div>

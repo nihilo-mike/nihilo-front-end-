@@ -17,6 +17,7 @@
   .cont { grid-area: cont; }
   
   .trans-table { 
+    display: flex;
     box-sizing: content-box;
     grid-area: trans-table; 
     border-width:2px;  

@@ -16,7 +16,7 @@ export const AnalysisTable=()=>{
      if (JSON.stringify(analysis)!=="{}") {
         const[previous,current]=analysis;
           return(
-              <div className="balance-table">
+              <div className="balancetable">
               <Table
               striped
               responsive

@@ -3,7 +3,7 @@ import ReactDatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import {useData} from "../Contexts/DataContext";
 import { useForm,Controller } from 'react-hook-form';
-import { Button } from 'reactstrap';
+import { Button,Card,CardBody,CardHeader } from 'reactstrap';
 import axios from 'axios';
 export const BalanceSheet=()=>{
 
@@ -39,8 +39,13 @@ const onSubmit=(data)=>{
     }
 }
 return(
-    <form className="balance-form" onSubmit={handleSubmit(onSubmit)}>
-    <div>  
+  <Card className="balance-form">
+    <CardHeader tag="h2">
+     Balance Sheet
+    </CardHeader>
+    <CardBody>
+    <form  onSubmit={handleSubmit(onSubmit)}>
+    <div style={{paddingBottom:"20px"}}>  
      <label className="label">date</label>
                 <Controller
                  control={control}
@@ -60,6 +65,8 @@ return(
           <Button className="button" type="submit">go</Button>
           </div>
    </form>
+   </CardBody>
+   </Card>
 
 
 );
