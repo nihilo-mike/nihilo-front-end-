@@ -1,24 +1,31 @@
 import './Styles/nihilo.scss';
 import{Route,BrowserRouter as Router,Switch} from 'react-router-dom';
-import {Form} from "./Pages/Form"
-import{LoginForm} from "./Pages/LoginForm";
-import{DashBoard}from"./Pages/DashBoard";
-import{Balance}from "./Pages/Balance";
-import{Income}from"./Pages/Income";
-import {AnalysisPage}from "./Pages/AnalysisPage";
-import {TransactionsPage}from "./Pages/TransactionsPage";
+import {Form,
+       LoginForm,
+       DashBoard,
+       Balance,
+       Income,
+       AnalysisPage,
+       TransactionsPage} from "./Pages/index"
+import {useData} from "./Contexts/DataContext"
+
+const PrivateRoute = ({ component, ...options }) => {
+  const{user}=useData();
+  const finalComponent = user ? component : LoginForm;
+ return <Route {...options} component={finalComponent} />;
+};
 function App() {
 
  return (
   <Router>
     <Switch>
      <Route path='/' exact={true} component={LoginForm}/>
-     <Route path='/Add' exact={true} component={Form}/> 
-     <Route path='/Dashboard' exact={true}component={DashBoard}/>
-     <Route path='/Balance'  exact={true}component={Balance}/>
-     <Route path='/Income'exact={true}component={Income}/>
-     <Route path='/Analysis'exact={true}component={AnalysisPage}/>
-     <Route path='/Transactions'exact={true}component={TransactionsPage}/>  
+     <PrivateRoute path='/Add' exact={true} component={Form}/> 
+     <PrivateRoute path='/Dashboard' exact={true}component={DashBoard}/>
+     <PrivateRoute path='/Balance'  exact={true}component={Balance}/>
+     <PrivateRoute path='/Income'exact={true}component={Income}/>
+     <PrivateRoute path='/Analysis'exact={true}component={AnalysisPage}/>
+     <PrivateRoute path='/Transactions'exact={true}component={TransactionsPage}/>  
   </Switch> 
  </Router>
    

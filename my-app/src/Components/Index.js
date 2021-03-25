@@ -14,3 +14,5 @@ export {AnalysisTable} from "./Tables/AnalysisTable";
 export{SideBar}from "./SideBar";
 export{ChartOne}from "../Components/Charts/ChartOne";
 export{ChartTwo}from "../Components/Charts/ChartTwo";
+
+

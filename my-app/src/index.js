@@ -5,11 +5,12 @@ import {DataProvider} from "./Contexts/DataContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <DataProvider> 
-      <App />
-    </DataProvider> 
+        <App/>
+      </DataProvider> 
   </React.StrictMode>,
   document.getElementById('root')
 );

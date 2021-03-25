@@ -1,11 +1,13 @@
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import axios from 'axios';
+import {useData} from "../Contexts/DataContext"
 import {Button,Input}from 'reactstrap';
 import { useHistory } from "react-router-dom";
 import {ReactComponent as Logo} from "../Assets/nihilo.svg";
 const Login=()=> {
   let history = useHistory();
+  const{setUser}=useData();
   const { control, handleSubmit} = useForm({
     mode:"onSubmit"
   });
@@ -19,7 +21,8 @@ const Login=()=> {
             if(response.status==200){
                 const { token } = response.data;
                 localStorage.setItem('token',token)
-                history.push('/Dashboard')
+                history.push('/Dashboard');
+                setUser(true);
               }}).catch(err=>alert("username or password incorrect"));
     }
   return (

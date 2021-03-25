@@ -2,8 +2,10 @@ import React from "react";
 import { NavItem, Nav, NavLink } from "reactstrap";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../Assets/nihilo.svg";
+import { useData } from "../Contexts/DataContext";
 
 export const SideBar = () => {
+  const{setUser}=useData();
   return (
     <Nav vertical className="sideBarCont">
       <Logo className="logo" />
@@ -56,6 +58,26 @@ export const SideBar = () => {
             to="/Analysis"
           >
             <NavLink activeClassName="activeside">Analysis</NavLink>
+          </Link>
+        </NavItem>
+        <NavItem className="nav-item">
+          <Link
+            style={{
+              textDecoration: "none",
+            }}
+            to="/Transactions"
+          >
+            <NavLink activeClassName="activeside">Transactions</NavLink>
+          </Link>
+        </NavItem>
+        <NavItem className="nav-item">
+          <Link
+            style={{
+              textDecoration: "none",
+            }}
+            to="/"
+            >
+            <NavLink activeClassName="activeside">Log out</NavLink>
           </Link>
         </NavItem>
       </div>

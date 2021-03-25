@@ -14,6 +14,7 @@ export const DataProvider=({children})=>{
     const[currentPage,setCurrentPage]=useState(0);
     const[totalRecords,setTotalRecords]=useState(0);
     const[transactions,setTransactions]=useState([]);
+    const[user,setUser]=useState(null);
     return(
         <DataContext.Provider value={{
         incomeStatement,setIncomeStatement,
@@ -23,6 +24,7 @@ export const DataProvider=({children})=>{
         balanceSheet,setBalanceSheet,
         currentPage,setCurrentPage,
         totalRecords,setTotalRecords,
+        user,setUser,
         analysis,setAnalysis}}>
             {children}
         </DataContext.Provider>
