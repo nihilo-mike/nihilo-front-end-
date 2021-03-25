@@ -1,0 +1,40 @@
+.sideBarCont {
+    display: flex;
+    flex-direction: column;
+    background: #6c6c6d;
+    position: absolute;
+    min-height: 100vh;
+    .logo {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .optionContainer {
+      padding-top: 50px;
+    }
+  }
+  
+  .nav {
+    .nav-item {
+      margin: 5px 0px 10px 10px;
+      background: rgba(7, 7, 7, 0.333);
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.603);
+    }
+  
+    .nav-link {
+      color: #fff;
+      transition: ease-in 400ms;
+  
+      &:hover {
+        background: #fff;
+        color: rgb(163, 163, 163);
+        transition: ease-in 400ms;
+      }
+    }
+  }
+  
+
+
+
+

@@ -1,0 +1,59 @@
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr;
+  gap: 7px 5px;
+  min-height: 100vh;
+  background: linear-gradient(90deg, 
+  rgba(255,255,255,1) 0%, 
+  rgba(212,212,212,0.7685117302052786) 44%, 
+  rgba(147,149,149,1) 100%);
+  grid-template-areas:
+    "sidebarCont income-form income-form ."
+    "sidebarCont incometable incometable ."
+    "sidebarCont incometable incometable .";
+}
+
+.sidebarCont { grid-area: sidebarCont; }
+
+.income-form { grid-area: income-form; }
+
+.incometable { grid-area: incometable;
+  border-width:5px;  
+  border-style:groove; }
+
+
+
+
+ .income{
+  border: 5px solid green;
+  } 
+ .incometable{
+   background-color: white;
+   max-height: 100vh;
+   
+   }
+.income-form{
+
+  display:flex;   
+ justify-self: stretch;
+   place-items: center;
+   .incomeinput{
+     margin: 10px;
+     box-shadow: inset;
+   }
+   .button-div{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+}
+
+
+         
+     
+
+       
+
+ 
