@@ -10,11 +10,12 @@ import {Form,
 import {useData} from "./Contexts/DataContext"
 
 const PrivateRoute = ({ component, ...options }) => {
-  const{user}=useData();
-  const finalComponent = user ? component : LoginForm;
+  const token=localStorage.getItem(token);
+  const finalComponent = token ? component : LoginForm;
  return <Route {...options} component={finalComponent} />;
 };
 function App() {
+  
 
  return (
   <Router>
