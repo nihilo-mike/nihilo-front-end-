@@ -7,8 +7,6 @@ export const Account=()=>{
   const url="https://nihiloacc.herokuapp.com/api/AccountType";
 const {data:accountType,loading:accLoad,status}=useFetch(url);
 const GetAccount=()=>{
-  console.log(status);
-  
   if(accountType.status==401){
        history.push("/");
        }
