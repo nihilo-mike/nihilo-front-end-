@@ -8,7 +8,7 @@ import {Form,
        Income,
        AnalysisPage,
        TransactionsPage} from "./Pages/index"
-import {useData} from "./Contexts/DataContext"
+
 
 const PrivateRoute = ({ component, ...options }) => {
   const{user}=useData();
