@@ -1,5 +1,6 @@
 import './Styles/nihilo.scss';
 import{Route,BrowserRouter as Router,Switch} from 'react-router-dom';
+import {useData} from "./Contexts/DataContext"
 import {Form,
        LoginForm,
        DashBoard,
@@ -10,8 +11,8 @@ import {Form,
 import {useData} from "./Contexts/DataContext"
 
 const PrivateRoute = ({ component, ...options }) => {
-  const token=localStorage.getItem(token);
-  const finalComponent = token ? component : LoginForm;
+  const{user}=useData();
+  const finalComponent = user ? component : LoginForm;
  return <Route {...options} component={finalComponent} />;
 };
 function App() {
