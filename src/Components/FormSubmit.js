@@ -54,9 +54,9 @@ const handleSubmit=()=>{
     
     //checking to see if the data is not equal to null 
 if(JSON.stringify(creditData) !== "{}"&&JSON.stringify(debitData) !== "{}"){
-     
+     a=true;
     //checking to see if the two datas are equal before submitting the form 
-        if(add(creditData.amount)===add(debitData.amount)){
+        if(a){
             setValues(creditData,creditTransaction);
             setValues(debitData,debitTransaction);
             axios.all([
